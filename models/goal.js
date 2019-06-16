@@ -1,24 +1,24 @@
 var orm = require("../config/orm.js");
 
-var burger = {
+var goal = {
   all: function(cb) {
-    orm.all("burgers", function(res) {
+    orm.all("goals", function(res) {
       cb(res);
     });
   },
   create: function(name, cb) {
-    orm.create("burgers", [
-      "burger_name", "devoured"
+    orm.create("goals", [
+      "goal_name", "completed"
     ], [
       name, false
     ], cb);
   },
   update: function(id, cb) {
     var condition = "id=" + id;
-    orm.update("burgers", {
-      devoured: true
+    orm.update("goals", {
+      completed: true
     }, condition, cb);
   }
 };
 
-module.exports = burger;
+module.exports = goal;

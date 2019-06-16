@@ -1,15 +1,15 @@
 $(document).ready(function() {
     
-  $(".devour-form").on("submit", function(event) {
+  $(".complete-form").on("submit", function(event) {
     event.preventDefault();
 
-    var burger_id = $(this).children(".burger_id").val();
-    console.log(burger_id);
+    var goal_id = $(this).children(".goal_id").val();
+    console.log(goal_id);
     $.ajax({
       method: "PUT",
-      url: "/burgers/" + burger_id
+      url: "/goals/" + goal_id
     }).then(function(data) {
-      // reload page to display devoured burger in proper column
+      // reload page to display completed goals in proper column
       location.reload();
     });
 
