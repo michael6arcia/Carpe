@@ -15,7 +15,7 @@
 						{{#each goal_data}}
 						{{#unless this.completed}}
 						<div class="input-group">
-							<input class="form-control" type="text" value="{{this.id}}. {{this.goal_name}}"
+							<input class="form-control" type="text" value="{{this.goal_name}}"
 								style="background-color: white" readonly>
 							<div class="input-group-append">
 								<span class="input-group-text align-middle" style="height:50px; padding-top:30px;">
@@ -53,7 +53,7 @@
 					<hr>
 					{{#each goal_data}}
 					{{#if this.completed}}
-					<input class="form-control" type="text" placeholder="{{this.id}}. {{this.goal_name}}" readonly>
+					<input class="form-control" type="text" placeholder="{{this.goal_name}}" readonly>
 					{{/if}}
 					{{/each}}
 					</form>
