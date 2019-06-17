@@ -81,10 +81,10 @@ h1, h3 {
   text-align: center;
 }
 
-#delete-btn {
+.delete-btn {
   cursor: pointer;
 }
 
-#complete-btn {
+.complete-btn {
   cursor: pointer;
 }

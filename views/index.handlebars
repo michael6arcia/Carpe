@@ -18,12 +18,12 @@
 							<input class="form-control" type="text" value="{{this.goal_name}}"
 								style="background-color: white" readonly>
 							<div class="input-group-append">
-								<span class="input-group-text" id="delete-btn">
-									<h4><i class="fa fa-times-circle align-middle"
+								<span class="input-group-text">
+									<h4><i class="fa fa-times-circle align-middle delete-btn"
 											style="color: rgb(255, 81, 50); text-align: center;"></i></h4>
 								</span>
-								<span class="input-group-text" id="complete-btn">
-									<h4><i class="fa fa-check-circle align-middle"
+								<span class="input-group-text">
+									<h4><i class="fa fa-check-circle align-middle complete-btn"
 											style="color: green; text-align: center;"></i></h4>
 								</span>
 							</div>
@@ -75,6 +75,5 @@
 </div>
 
 <form class="complete-form button-size">
-	<input input type="hidden" class="goal_id" type="text" value={{this.name}}><br>
-	<button type="submit" class="btn btn-default"></button>
+	<input input type="hidden" class="goal_id" type="text" value={{this.name}}>
 </form>
