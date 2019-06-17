@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  $(".complete-form").on("submit", function (event) {
+  $(".complete-btn").on("click", function (event) {
     event.preventDefault();
 
     var goal_id = $(this).children(".goal_id").val();
@@ -19,7 +19,4 @@ $(document).ready(function () {
     alert("del-btn working");
   });
 
-  $(".complete-btn").on("click", function () {
-    alert("comp-btn working");
-  });
 });
