@@ -2,33 +2,39 @@
 	<div class="row">
 		<div class="col-md-12 text-center" id="top-bar">
 			<h1> Carpe </h1>
-			<h5>Keeping your goals in mind.</h5>
+			<p>Keeping your goals in mind.</p>
 		</div>
-		<div class="col-md-6 text-center" class="task">
-			<div class="row">
-			  {{#each goal_data}}
-			  	{{#unless this.completed}}
-				<div class="col-md-9 text-center">
-					<pre>{{this.id}}. {{this.goal_name}}
-					</pre>
-				  		<!-- {{this.Date}} -->
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<div class="jumbotron" style="height: 100%">
+				<div class="text-center" class="task">
+					<h3>Your Goals</h3>
+					<hr>
+					<div>
+						{{#each goal_data}}
+						{{#unless this.completed}}
+						<input class="form-control" type="text" value="{{this.goal_name}}"
+							style="background-color: white" readonly>
+
+						{{/unless}}
+						{{/each}}
+					</div>
 				</div>
-				<div class="col-md-3 text-center">
-					<form class="complete-form button-size">
-						<input input type="hidden" class="goal_id" type="text" value={{this.id}}><br>
-						<button type="submit" class="btn btn-default">Complete it!</button>
-					</form>
-				</div>
-				{{/unless}}
-			  {{/each}}
 			</div>
 		</div>
-		<div class="col-md-6 text-center" class="task">
-			  {{#each goal_data}}
-			  	{{#if this.completed}}
-			  		<input class="form-control" type="text" placeholder="{{this.id}} . {{this.goal_name}}" readonly>
-				{{/if}}
-			  {{/each}}
+		<div class="col-6">
+			<div class="jumbotron" style="height: 100%">
+				<div class="text-center" class="task">
+					<h3>Completed Goals</h3>
+					<hr>
+					{{#each goal_data}}
+					{{#if this.completed}}
+					<input class="form-control" type="text" placeholder="{{this.goal_name}}" readonly>
+					{{/if}}
+					{{/each}}
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -36,11 +42,17 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 text-center enter_section">
+			<p>Give yourself a new goal to complete with the "Submit" button.</p>
 			<form action="/goals/create" method="POST">
 				<input type="text" class="form-control" name="goal_name" value="" id="enter_text">
 				<button type="submit" class="btn btn-primary" id="text-enter-button">Submit</button>
 			</form>
-			<p>Give yourself a new goal you want to complete with the "Submit" button.</p>
 		</div>
 	</div>
 </div>
+
+<footer class="footer mt-auto py-3">
+  <div class="container">
+    <span class="text-muted">Place sticky footer content here.</span>
+  </div>
+</footer>
