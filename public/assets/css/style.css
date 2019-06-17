@@ -1,5 +1,6 @@
 body {
   width: 100%;
+  background-image: url("../images/crossword.png");
 }
 
 #top-bar {
@@ -71,10 +72,19 @@ h1, h3 {
   max-width: 680px;
   padding: 0 15px;
   color: white;
-  height: 75px;
 }
 
 .footer {
+  top: 10%;
+  position: absolute;
   background-color: #f76;
   text-align: center;
+}
+
+#delete-btn {
+  cursor: pointer;
+}
+
+#complete-btn {
+  cursor: pointer;
 }

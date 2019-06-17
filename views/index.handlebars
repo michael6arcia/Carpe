@@ -14,9 +14,20 @@
 					<div>
 						{{#each goal_data}}
 						{{#unless this.completed}}
-						<input class="form-control" type="text" value="{{this.goal_name}}"
-							style="background-color: white" readonly>
-
+						<div class="input-group">
+							<input class="form-control" type="text" value="{{this.goal_name}}"
+								style="background-color: white" readonly>
+							<div class="input-group-append">
+								<span class="input-group-text" id="delete-btn">
+									<h4><i class="fa fa-times-circle align-middle"
+											style="color: rgb(255, 81, 50); text-align: center;"></i></h4>
+								</span>
+								<span class="input-group-text" id="complete-btn">
+									<h4><i class="fa fa-check-circle align-middle"
+											style="color: green; text-align: center;"></i></h4>
+								</span>
+							</div>
+						</div>
 						{{/unless}}
 						{{/each}}
 					</div>
@@ -33,6 +44,7 @@
 					<input class="form-control" type="text" placeholder="{{this.goal_name}}" readonly>
 					{{/if}}
 					{{/each}}
+					</form>
 				</div>
 			</div>
 		</div>
@@ -53,9 +65,16 @@
 </div>
 
 <div>
-	<footer class="footer mt-auto py-3">
+	<footer class="footer mt-auto py-3"
+		style="border-right-color: rgba(255, 255, 255, 0.05); border-right-style: solid; border-right-width: 2px; border-bottom-color: rgba(255, 255, 255, 0.1); border-bottom-style: solid; border-bottom-width: 2px; border-top-color: rgba(255, 255, 255, 0.1); border-top-style: solid; border-top-width: 2px;">
 		<div class="container" id="footer-container">
-			<h1><i class="fa fa-globe"></i> Internet Browser Personality Quiz</h1>
+			<h1><a href="https://github.com/michaelgrca"><i class="fa fa-github align-middle"
+						style="color: white"></i></a></h1>
 		</div>
 	</footer>
 </div>
+
+<form class="complete-form button-size">
+	<input input type="hidden" class="goal_id" type="text" value={{this.name}}><br>
+	<button type="submit" class="btn btn-default"></button>
+</form>
