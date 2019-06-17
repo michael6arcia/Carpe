@@ -1,6 +1,5 @@
 body {
-  width: 99%;
-  height: 900px;
+  width: 100%;
 }
 
 #top-bar {
@@ -62,12 +61,20 @@ body {
   margin-bottom: 18px;
 }
 
-h1 {
+h1, h3 {
   color: #f76;
   font-family: 'Patua One', cursive;
 }
 
-h3 {
-  color: #f76;
-  font-family: 'Patua One', cursive;
+#footer-container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+  color: white;
+  height: 75px;
+}
+
+.footer {
+  background-color: #f76;
+  text-align: center;
 }
