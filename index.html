@@ -123,10 +123,8 @@
                         <h3>Your Goals</h3>
                         <hr>
                         <div>
-                            {{#each goal_data}}
-                            {{#unless this.completed}}
                             <div class="input-group">
-                                <input class="form-control" type="text" value="{{this.id}}. {{this.goal_name}}"
+                                <input class="form-control" type="text" value="Study for Exams"
                                     style="background-color: white" readonly>
                                 <div class="input-group-append">
                                     <span class="input-group-text align-middle" style="height:50px; padding-top:30px;">
@@ -151,8 +149,6 @@
                                     </span>
                                 </div>
                             </div>
-                            {{/unless}}
-                            {{/each}}
                         </div>
                     </div>
                 </div>
@@ -162,11 +158,9 @@
                     <div class="text-center" class="task">
                         <h3>Completed Goals</h3>
                         <hr>
-                        {{#each goal_data}}
-                        {{#if this.completed}}
-                        <input class="form-control" type="text" placeholder="{{this.id}}. {{this.goal_name}}" readonly>
-                        {{/if}}
-                        {{/each}}
+                        
+                        <input class="form-control" type="text" placeholder="Attend Yoga Session @ 6:30pm" readonly>
+
                         </form>
                     </div>
                 </div>
