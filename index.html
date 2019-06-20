@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carpe</title>
+
+</head>
+
+<body>
+    <a id="link">Click here to enter Carpe</a>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        var express = require("express");
+
+        var router = express.Router();
+        var goal = require("./models/goal.js");
+
+        $("#link").on("click", function () {
+            router.get("/", function (req, res) {
+                res.redirect("/goals");
+            });
+        });
+
+        module.exports = router;
+    </script>
+</body>
+
+</html>
