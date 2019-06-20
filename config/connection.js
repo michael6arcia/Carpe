@@ -10,7 +10,7 @@ var connection = mysql.createConnection({
   user: "root",
   password: process.env.DB_PASS,
   database: "goals_db",
-  socketPath: "/var/run/mysqld/mysqld.sock'"
+  socketPath: "/var/run/mysqld/mysqld.sock"
 });
 
 
