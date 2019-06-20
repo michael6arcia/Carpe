@@ -5,8 +5,8 @@ require("dotenv/config.js");
 require("./connection");
 
 var connection = mysql.createConnection({
-  host: "127.0.0.1",
-  port: process.env.PORT || 8000,
+  host: "localhost",
+  port: 3306,
   user: "root",
   password: process.env.DB_PASS,
   database: "goals_db"
