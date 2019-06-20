@@ -5,7 +5,7 @@ require("./connection");
 
 var connection = mysql.createConnection({
   host: "localhost",
-  port: process.env.port || 8000,
+  port: 3306,
   user: "root",
   password: process.env.DB_PASS,
   database: "goals_db"
