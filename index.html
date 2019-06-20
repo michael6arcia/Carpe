@@ -2,31 +2,110 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Carpe</title>
-
+    <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Patua+One&display=swap" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <a id="link">Click here to enter Carpe</a>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center" id="top-bar">
+                <h1> Carpe </h1>
+                <p>Keeping your goals in mind.</p>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="jumbotron" style="height: 100%">
+                    <div class="text-center" class="task">
+                        <h3>Your Goals</h3>
+                        <hr>
+                        <div>
+                            {{#each goal_data}}
+                            {{#unless this.completed}}
+                            <div class="input-group">
+                                <input class="form-control" type="text" value="{{this.id}}. {{this.goal_name}}"
+                                    style="background-color: white" readonly>
+                                <div class="input-group-append">
+                                    <span class="input-group-text align-middle" style="height:50px; padding-top:30px;">
+                                        <form class="complete-btn button-size">
+                                            <input input type="hidden" class="goal_id" type="text" value={{this.id}}>
+
+                                            <!--Planning to have the delete function working in a future version-->
+                                            <h4><i title="Delete Goal (Not Working Yet)" class=" fa fa-times-circle"
+                                                    style="color: rgb(255, 81, 50); padding-top:5px"></i></h4>
+
+                                        </form>
+                                    </span>
+                                    <span class="input-group-text align-middle" style="height:50px; padding-top:30px;">
+                                        <form class="complete-btn button-size">
+                                            <input input type="hidden" class="goal_id" type="text" value={{this.id}}>
+
+                                            <h4><i title="Complete Goal" class=" fa fa-check-circle"
+                                                    style="color: green; padding-top:5px"></i>
+                                            </h4>
+
+                                        </form>
+                                    </span>
+                                </div>
+                            </div>
+                            {{/unless}}
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="jumbotron" style="height: 100%">
+                    <div class="text-center" class="task">
+                        <h3>Completed Goals</h3>
+                        <hr>
+                        {{#each goal_data}}
+                        {{#if this.completed}}
+                        <input class="form-control" type="text" placeholder="{{this.id}}. {{this.goal_name}}" readonly>
+                        {{/if}}
+                        {{/each}}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center enter_section">
+                <p>Give yourself a new goal to complete with the "Submit" button.</p>
+                <form action="/goals/create" method="POST">
+                    <input type="text" class="form-control" name="goal_name" value="" id="enter_text">
+                    <button style="background-color:#f76; border-color:#f76; color: white" type="submit"
+                        class="btn btn-light" id="text-enter-button">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <footer class="footer mt-auto py-3"
+            style="border-right-color: rgba(255, 255, 255, 0.05); border-right-style: solid; border-right-width: 2px; border-bottom-color: rgba(255, 255, 255, 0.1); border-bottom-style: solid; border-bottom-width: 2px; border-top-color: rgba(255, 255, 255, 0.1); border-top-style: solid; border-top-width: 2px;">
+            <div class="container" id="footer-container">
+                <h1><a href="https://github.com/michaelgrca"><i title="Github Repo" class="fa fa-github align-middle"
+                            style="color: white"></i></a></h1>
+            </div>
+        </footer>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script>
-        var express = require("express");
-
-        var router = express.Router();
-        var goal = require("./models/goal.js");
-
-        $("#link").on("click", function () {
-            router.get("/", function (req, res) {
-                res.redirect("/goals");
-            });
-        });
-
-        module.exports = router;
-    </script>
+    <script src="/assets/js/script.js"></script>
 </body>
 
 </html>
