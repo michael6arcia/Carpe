@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 
-require("dotenv/config");
+require("../node_modules/dotenv/config.js");
 require("./connection");
 
 var connection = mysql.createConnection({
