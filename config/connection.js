@@ -5,11 +5,12 @@ require("dotenv/config.js");
 require("./connection");
 
 var connection = mysql.createConnection({
-  host: "127.0.0.1:3306",
+  host: "localhost",
   port: 3306,
   user: "root",
   password: process.env.DB_PASS,
-  database: "goals_db"
+  database: "goals_db",
+  socketPath: "/var/run/mysqld/mysqld.sock'"
 });
 
 
